@@ -38,21 +38,9 @@ const ForecastTable = (props: IForecastTable) => {
                   <RefreshIcon />
                 </IconButton>
               </TableCell>
-              <TableCell>
-                <Typography>
-                
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Typography>
-                  
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Typography>
-                
-                </Typography>
-              </TableCell>
+              <TableCell />
+              <TableCell />
+              <TableCell />
             </TableRow>
            </TableHead>
           <TableBody>
