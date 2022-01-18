@@ -28,51 +28,51 @@ const ForecastTable = (props: IForecastTable) => {
   const dates = sortTimeseriesByDate(timeseries, days);
 
   return (
-      <TableContainer component={Paper}>
-        {loading && <LinearProgress />}
-        <Table aria-label="sticky table">
-          <TableHead>
-            <TableRow>
-              <TableCell>
-                <IconButton onClick={onRefresh}>
-                  <RefreshIcon />
-                </IconButton>
-              </TableCell>
-              <TableCell />
-              <TableCell />
-              <TableCell />
-            </TableRow>
-           </TableHead>
-          <TableBody>
-            {timeseries?.length >= 1 && dates?.map((values, index) => {
-              // Pick median hour for main table
-              const medianHour = Math.round(values.length / 2);
-              const midDay = values[medianHour].data;
-              return (
-                <TableRow key={index}>
-                  <TableCell>
-                    <Typography variant="h6">
-                      {days[(new Date(values[medianHour].time).getDay())]}
-                    </Typography>
-                    <Typography variant="h6" style={{ color: midDay.instant.details.air_temperature  > 0 ? "#E65147" : "#344FFE" }}>
-                      {values[medianHour].data.instant.details.air_temperature}&#8451;
-                    </Typography>
-                  </TableCell>
-                  <TableCell>
-                    {symbolToIcon[values[medianHour].data.next_1_hours?.summary.symbol_code]}
-                  </TableCell>
-                  <TableCell>
-                    {symbolToIcon[values[medianHour].data.next_6_hours?.summary.symbol_code]}
-                  </TableCell>
-                  <TableCell>
-                    {symbolToIcon[values[medianHour].data.next_12_hours?.summary.symbol_code]}
-                  </TableCell>
-                </TableRow>
-              )
-            })}
-          </TableBody>
-        </Table>
-      </TableContainer>
+    <TableContainer component={Paper}>
+      {loading && <LinearProgress />}
+      <Table aria-label="sticky table">
+        <TableHead>
+          <TableRow>
+            <TableCell>
+              <IconButton onClick={onRefresh}>
+                <RefreshIcon color={loading ? "disabled" : "action"} />
+              </IconButton>
+            </TableCell>
+            <TableCell />
+            <TableCell />
+            <TableCell />
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {timeseries?.length >= 1 && dates?.map((values, index) => {
+            // Pick median hour for main table
+            const medianHour = Math.round(values.length / 2);
+            const midDay = values[medianHour].data;
+            return (
+              <TableRow key={index}>
+                <TableCell>
+                  <Typography variant="h6">
+                    {days[(new Date(values[medianHour].time).getDay())]}
+                  </Typography>
+                  <Typography variant="h6" style={{ color: midDay.instant.details.air_temperature > 0 ? "#E65147" : "#344FFE" }}>
+                    {values[medianHour].data.instant.details.air_temperature}&#8451;
+                  </Typography>
+                </TableCell>
+                <TableCell>
+                  {symbolToIcon[values[medianHour].data.next_1_hours?.summary.symbol_code]}
+                </TableCell>
+                <TableCell>
+                  {symbolToIcon[values[medianHour].data.next_6_hours?.summary.symbol_code]}
+                </TableCell>
+                <TableCell>
+                  {symbolToIcon[values[medianHour].data.next_12_hours?.summary.symbol_code]}
+                </TableCell>
+              </TableRow>
+            )
+          })}
+        </TableBody>
+      </Table>
+    </TableContainer>
   )
 
 }

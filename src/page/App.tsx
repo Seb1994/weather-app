@@ -13,7 +13,7 @@ import { TTimeseries } from '../@types';
 const useStyles = makeStyles(() => ({
   app: {
     backgroundColor: "#1A5276",
-    minHeight: "100vh",
+    height: "120vh",
   },
   content: {
     display: "flex",
