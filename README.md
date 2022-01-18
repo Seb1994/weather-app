@@ -4,6 +4,7 @@
 
 
 TODO/Improvements:
+- Dropdown table with more detailed information on each day (hour for hour)
 - Better state handling and data massaging after fetching data
   - Suggestion: Redux/Toolkit
 - Add GeoCoding and the possibility to search for specific location
@@ -11,7 +12,7 @@ TODO/Improvements:
 - Scaling and quality of code
   - Add tests (Pure function tests, component/unit tests)
   - Folder structure
-- Add more weather icons
+- Download all weather icons as png's and have them stored locally in assets folder
 - Overall improvements of UI
 
 

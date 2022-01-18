@@ -6,6 +6,8 @@ const FairDay = () => (<img alt="fair_day" style={{ width: iconWidth }} src="htt
 const PartlyCloudyDay = () => (<img alt="partlycloudy_day" style={{ width: iconWidth }} src="https://www.yr.no/assets/images/svg/03d.svg" />);
 const PartlyCloudyNight = () => (<img alt="partlycloudy_night" style={{ width: iconWidth }} src="https://www.yr.no/assets/images/svg/03n.svg" />);
 const Cloudy = () => (<img alt="cloudy" style={{ width: iconWidth }} src="https://www.yr.no/assets/images/svg/04.svg" />);
+const LightRainShowersDay = () => (<img alt="lightrainshowers_day" style={{ width: iconWidth }} src="https://www.yr.no/assets/images/svg/40d.svg" />)
+const Rain = () => (<img alt="rain" style={{ width: iconWidth }} src="https://www.yr.no/assets/images/svg/09.svg" />)
 
 const symbolToIcon = {
   partlycloudy_day: (<PartlyCloudyDay />),
@@ -14,7 +16,9 @@ const symbolToIcon = {
   clearsky_night: (<ClearSkyNight />),
   fair_night: (<FairNight />),
   fair_day: (<FairDay />),
-  cloudy: (<Cloudy />)
+  cloudy: (<Cloudy />),
+  lightrainshowers_day: (<LightRainShowersDay />),
+  rain: (<Rain />)
 };
 
 export { symbolToIcon };
